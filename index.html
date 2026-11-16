@@ -8,6 +8,7 @@
 <meta property="og:title" content="LAGILAGIGS 2026">
 <meta property="og:description" content="21 November 2026 • Rooftop Mall Dinoyo City, Malang — Festival musik by Rasvara Fest & Mits Entertainment.">
 <meta property="og:type" content="event">
+<meta property="og:locale" content="id_ID">
 <title>Detail Event - LAGILAGIGS 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,7 @@
 <style>
 :root{--blue:#2B3FD8;--text:#19232c;--border:#e4e4e4;--muted:#94a3b8}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{margin:0;background:#fff;color:var(--text);font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .app{width:100%;max-width:920px;margin:0 auto;background:#fff;min-height:100vh;padding-bottom:150px}
@@ -45,10 +47,9 @@ body{margin:0;background:#fff;color:var(--text);font-family:'Plus Jakarta Sans',
 .icon{width:21px;height:24px;display:grid;place-items:center}
 .icon svg{width:20px;height:20px}
 .info-text{font-size:17px;font-weight:500;line-height:1.5;min-width:0}
-/* === Animasi lokasi bergerak === */
 .loc-wrap{display:flex;flex-direction:column;gap:2px}
 .directions{display:inline-flex;width:max-content;margin:7px 0 0;color:var(--blue);text-decoration:none;font-size:16px;font-weight:800;align-items:center;gap:6px;animation:dirPulse 1.6s ease-in-out infinite}
-.directions .dir-arrow{display:inline-block;transition:transform .3s}
+.directions .dir-arrow{display:inline-block}
 @keyframes dirPulse{0%,100%{transform:translateX(0);opacity:.85}50%{transform:translateX(4px);opacity:1}}
 .pin-anim{color:var(--blue);animation:pinDrop 1.4s ease-in-out infinite;transform-origin:bottom center}
 @keyframes pinDrop{0%,100%{transform:translateY(0) scale(1)}30%{transform:translateY(-5px) scale(1.05)}55%{transform:translateY(0) scale(1)}70%{transform:translateY(-2px) scale(1.02)}}
@@ -56,16 +57,15 @@ body{margin:0;background:#fff;color:var(--text);font-family:'Plus Jakarta Sans',
 .organizer span{color:#929292;font-weight:500}
 .organizer strong{font-size:16px;font-weight:800}
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:9px solid #ededed;padding:0 17px;background:#fff}
-.tab{appearance:none;border:0;background:transparent;padding:20px 3px 17px;font-size:16px;font-weight:800;font-family:inherit;color:var(--text);cursor:pointer;border-bottom:2px solid var(--border);white-space:nowrap;transition:color .25s cubic-bezier(.4,0,.2,1)}
+.tab{appearance:none;border:0;background:transparent;padding:20px 3px 17px;font-size:16px;font-weight:800;font-family:inherit;color:var(--text);cursor:pointer;border-bottom:3px solid var(--border);white-space:nowrap;transition:color .25s cubic-bezier(.4,0,.2,1)}
 .tab:hover{color:var(--blue)}
-.tab.active{color:var(--blue);border-bottom:3px solid var(--blue)}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
 .tab:focus-visible{outline:2px solid var(--blue);outline-offset:-4px;border-radius:6px}
 .panel{display:none}
 .panel.active{display:block}
 .card{display:flex;align-items:center;gap:13px;border:1px solid var(--border);border-radius:5px;padding:14px 16px;margin-bottom:9px;min-height:80px;background:#fff}
 .card-name{flex:1;font-size:16px;font-weight:800}
 .facility-icon{width:47px;height:47px;display:grid;place-items:center;background:#f7faff;color:var(--blue);flex:none;font-size:29px}
-/* Lineup cards */
 .lineup-card{display:flex;align-items:center;gap:13px;border:1px solid var(--border);border-radius:8px;padding:12px;background:#fff;margin-bottom:9px}
 .lineup-img{width:58px;height:58px;border-radius:8px;object-fit:cover;flex:none;background:linear-gradient(135deg,#cfd3dd,#9aa0ad)}
 .lineup-name{flex:1;font-size:16px;font-weight:800;letter-spacing:.02em}
@@ -87,6 +87,7 @@ body{margin:0;background:#fff;color:var(--text);font-family:'Plus Jakarta Sans',
 .social-text{display:flex;flex-direction:column;gap:2px}
 .social-text small{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .social-text span{font-size:16px;font-weight:700}
+.lineup-card:focus-visible,.social a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 .bottom{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(920px,100%);background:#fff;border-top:1px solid var(--border);padding:8px 8px 0;z-index:50;box-shadow:0 -10px 25px rgba(0,0,0,.045)}
 .buy{width:100%;border:0;border-radius:4px;background:var(--blue);color:#fff;font-size:18px;font-weight:800;font-family:inherit;padding:14px;cursor:pointer}
 .verify{text-align:center;font-size:13px;margin:12px -8px 0;padding:12px 8px 14px;border-top:1px solid var(--border)}
@@ -109,7 +110,8 @@ body{margin:0;background:#fff;color:var(--text);font-family:'Plus Jakarta Sans',
   <main>
     <div class="content">
       <div class="hero-wrap">
-        <div class="event-poster" role="img" aria-label="Poster LAGILAGIGS 2026 - 21 November 2026 di Rooftop Dinoyo">
+        <img class="hero" src="banner.webp" alt="Banner LAGILAGIGS 2026 - 21 November 2026 di Rooftop Mall Dinoyo City, Malang" width="920" height="517" fetchpriority="high" decoding="async">
+        <div class="event-poster" id="poster-fallback" hidden role="img" aria-label="Poster LAGILAGIGS 2026 - 21 November 2026 di Rooftop Dinoyo">
           <div class="poster-top">
             <span class="poster-tag">By Rasvara Fest</span>
             <span class="poster-date">21 NOVEMBER,<br>2026</span>
@@ -171,17 +173,17 @@ body{margin:0;background:#fff;color:var(--text);font-family:'Plus Jakarta Sans',
 
       <section id="lineup" class="panel" role="tabpanel" aria-labelledby="tab-lineup">
         <a class="lineup-card" href="#" aria-label="Lihat detail The Skit">
-          <img class="lineup-img" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=120&h=120&fit=crop" alt="The Skit" loading="lazy" decoding="async">
+          <img class="lineup-img" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=120&h=120&fit=crop" alt="The Skit" width="120" height="120" loading="lazy" decoding="async">
           <span class="lineup-name">THE SKIT</span>
           <svg class="lineup-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
         </a>
         <a class="lineup-card" href="#" aria-label="Lihat detail Eastcape">
-          <img class="lineup-img" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=120&h=120&fit=crop" alt="Eastcape" loading="lazy" decoding="async">
+          <img class="lineup-img" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=120&h=120&fit=crop" alt="Eastcape" width="120" height="120" loading="lazy" decoding="async">
           <span class="lineup-name">EASTCAPE</span>
           <svg class="lineup-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
         </a>
         <a class="lineup-card" href="#" aria-label="Lihat detail Dongker">
-          <img class="lineup-img" src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?w=120&h=120&fit=crop" alt="Dongker" loading="lazy" decoding="async">
+          <img class="lineup-img" src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?w=120&h=120&fit=crop" alt="Dongker" width="120" height="120" loading="lazy" decoding="async">
           <span class="lineup-name">DONGKER</span>
           <svg class="lineup-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
         </a>
@@ -232,9 +234,16 @@ const topbar=document.getElementById('topbar');
 const tabsNav=document.querySelector('.tabs');
 const tabs=[...document.querySelectorAll('.tab')];
 const panels=[...document.querySelectorAll('.panel')];
+const heroImg=document.querySelector('.hero');
+const posterFallback=document.getElementById('poster-fallback');
+const smoothBehavior=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+const applyHeroFallback=()=>{heroImg.hidden=true;posterFallback.hidden=false};
+if(heroImg.complete&&heroImg.naturalWidth===0)applyHeroFallback();
+else heroImg.addEventListener('error',applyHeroFallback,{once:true});
 document.querySelector('.back').addEventListener('click',()=>history.back());
 document.querySelector('.buy').addEventListener('click',()=>{location.href='tiket.html'});
 document.getElementById('verify-link').addEventListener('click',e=>{e.preventDefault();alert('Fitur verifikasi tiket belum terhubung ke layanan resmi.')});
+document.querySelectorAll('.lineup-card').forEach(card=>card.addEventListener('click',e=>e.preventDefault()));
 const fav=document.querySelector('.favorite');
 fav.addEventListener('click',()=>{
   const saved=fav.classList.toggle('saved');
@@ -245,8 +254,18 @@ fav.addEventListener('click',()=>{
 tabs.forEach(tab=>tab.addEventListener('click',()=>{
   tabs.forEach(t=>{t.classList.toggle('active',t===tab);t.setAttribute('aria-selected',t===tab)});
   panels.forEach(p=>p.classList.toggle('active',p.id===tab.dataset.tab));
-  window.scrollTo({top:tabsNav.getBoundingClientRect().top+window.scrollY-topbar.offsetHeight,behavior:'smooth'});
+  window.scrollTo({top:tabsNav.getBoundingClientRect().top+window.scrollY-topbar.offsetHeight,behavior:smoothBehavior});
 }));
+tabsNav.addEventListener('keydown',e=>{
+  const step=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+  if(!step)return;
+  const i=tabs.indexOf(document.activeElement);
+  if(i<0)return;
+  e.preventDefault();
+  const next=tabs[(i+step+tabs.length)%tabs.length];
+  next.focus();
+  next.click();
+});
 </script>
 </body>
 </html>
